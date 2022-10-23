@@ -1,5 +1,6 @@
 import io
 import os
+import sys
 from dotenv import load_dotenv
 
 import json
@@ -10,17 +11,16 @@ import requests
 load_dotenv()
 
 API = os.getenv('API')
-# FILE = "img/results1a"
-FILE = "img/img1e"
-JPG = FILE+".jpg"
+FILE = sys.argv[1]
+JPG = FILE
 TXT = FILE+".txt"
 
 img = cv2.imread(JPG)
 height, width, _ = img.shape
 
 # Cutting image
-# roi = img[100: height, 856: width]
-roi = img[0: height, 0: width]
+roi = img[100: height, 856: width]
+# roi = img[0: height, 0: width]
 
 # Ocr
 url_api = "https://api.ocr.space/parse/image"
