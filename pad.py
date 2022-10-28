@@ -7,7 +7,7 @@ from paddleocr import PaddleOCR, draw_ocr
 
 load_dotenv()
 
-API = os.getenv('API')
+FONT_PATH = os.getenv('FONT_PATH')
 EQ = "eq.jpg"
 
 PATH = sys.argv[1]
@@ -19,8 +19,6 @@ cropped = img.crop((width/3,0,width,height*5/6))
 grey = ImageOps.grayscale(cropped)
 eq = ImageOps.equalize(grey)
 eq.save(EQ)
-
-FONT_PATH = 'C://Windows/Fonts/Arial.ttf' # Replace with font I guess
 
 ocr = PaddleOCR(use_angle_cls=True, lang="en", page_num=2)  # need to run only once to download and load model into memory
 img_path = './{}'.format(EQ)
