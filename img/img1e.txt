@@ -1,7 +1,0 @@
-70	
-Assists	
-Saves	50	
-KOs	4	
-Orbs	23	
-Redirects	124	
-Shots	12	
