@@ -1,5 +1,5 @@
 ## Usage
 
 ```
-python pad.py test/example.py
+python pad.py test/example.png
 ```
